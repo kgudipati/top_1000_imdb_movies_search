@@ -10,6 +10,9 @@ Search movies with any number of Actors, Directors, Writers, Production Co's and
 To run the application (uses Python 3):
 <code>python3 search.py</code>
 
+Initially, launcher will take a while to run to scrape every movie detail page ~15 min. However, After the first successful run, the in-memory store is pickled so re-runs will be much faster!
+
+
 Simplifying Assumptions:
 - Search for the exact value. To quickly lookup data in the graph (hash implementation), the search requires you type in the exact name of the actor, genre, director, etc.
 - Each movie detail in search query must be separated with a '&'. This allows us to easily search through multiple movie details as opposed to if we were to separate each detail with a space.
