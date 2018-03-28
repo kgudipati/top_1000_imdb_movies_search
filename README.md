@@ -3,11 +3,12 @@ Simple Search for the Top 1000 imdb movies using an in-memory graph data store.
 
 Search movies with any number of Actors, Directors, Writers, Production Co's and/or Genre's. (eg. Brad Pitt & crime).
 
-Scraper class crawls the Top 1000 movies listings (http://www.imdb.com/search/title?groups=top_1000&sort=user_rating&view=simple&page=1&ref_=adv_nxt) and each movie details pages. 
+- Scraper class crawls the Top 1000 movies listings (http://www.imdb.com/search/title?groups=top_1000&sort=user_rating&view=simple&page=1&ref_=adv_nxt) and each movie details pages. 
+- The crawled data is stored in Graph instance as <code>(movie_detail, movie_title)</code> in <code>defaultdict(set)</code> to easily access the movies by their movie detail.
+- Search launches shell to lookup movies by movie details. 
 
-The crawled data is stored in Graph instance as (movie_detail, movie_title) in defaultdict(set) to easily access the movies by their movie detail.
-
-Search launches shell to lookup movies by movie details.
+To run the application (uses Python 3):
+<code>python3 search.py</code>
 
 Simplifying Assumptions:
 - Search for the exact value. To quickly lookup data in the graph (hash implementation), the search requires you type in the exact name of the actor, genre, director, etc.
